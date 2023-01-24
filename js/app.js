@@ -39,11 +39,11 @@ else{
 }
 let question5 = prompt('Are cats my favorite animals?','y/y, Yes/Yessssssss').toLowerCase();
 if(question5 === 'yes' || question5 === 'y') {
-  //console.log('You\'re Right!');
+  //console.log('You\'re Right, ' + username);
   alert('You\'re Right!');
 }
 else{
-  //console.log('Incorrect');
+  //console.log('Incorrect, ' + username);
   alert('Incorrect');
 }
 
