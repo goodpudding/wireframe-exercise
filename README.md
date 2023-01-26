@@ -20,7 +20,7 @@ Depending on the size of the project, if it is small and simple enough the refer
 
 ## Tests
 
-![Here is my lighthouse results](img/Class02Lighthouse.png)
+![Here is my lighthouse results](img/LighthouseTest.png)
 
 ## Contributors
 

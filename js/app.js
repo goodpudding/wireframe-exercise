@@ -1,84 +1,86 @@
 'use strict';
 alert('Hello!');
 let username = prompt('What is your name?');
-alert('Hi there, ' + username + '. Lets play a little game.');
+alert('Hi there, ' + username + '. Let\'s play a little game.');
 let playersScore = 0;
 
 // Question 1
-let question1 = prompt('Did I grow up in Alaska').toLowerCase();
+
+let question1 = prompt('Did I grow up in Alaska?').toLowerCase();
 if (question1 === 'yes' || question1 === 'y') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
-  playersScore + 1;
-}
+  //console.log('You\'re right!');
+  playersScore++;
+  alert('You\'re right!');
+
+} 
 else {
-  //console.log('Incorrect');
-  alert('Incorrect');
+  //console.log('WRONG');
+  alert('WRONG');
 }
 
 // Question 2
-let question2 = prompt('Did I complete my degree', 'y/n, Yes/No').toLowerCase();
+let question2 = prompt('Did I complete my degree?', 'y/n, Yes/No').toLowerCase();
 if (question2 === 'yes' || question2 === 'y') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
   playersScore++;
+  //console.log('You\'re right!');
+  alert('You\'re right!');
 }
 else {
   console.log('Incorrect');
 }
 console.log('test6666');
 // Question 3
-let question3 = prompt('Have I lived in more that 5 states?', 'y/n, Yes/No').toLowerCase();
+let question3 = prompt('Have I lived in more than 5 states?', 'y/n, Yes/No').toLowerCase();
 if (question3 === 'yes' || question3 === 'y') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
   playersScore++;
+  //console.log('You\'re right!');
+  alert('You\'re right!');
 }
 else {
-  //console.log('Incorrect');
-  alert('Incorrect');
+  //console.log('BEEP WRONG');
+  alert('BEEP WRONG');
 }
 
 // Question 4
-let question4 = prompt('Did I graduate in 2011?', 'y/n, Yes/No').toLowerCase();
+let question4 = prompt('Did I graduate from Your Mom in 2011?', 'y/n, Yes/No').toLowerCase();
 if (question4 === 'n' || question4 === 'no') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
   playersScore++;
+  //console.log('You\'re right!');
+  alert('You\'re right!');
 }
 else {
-  //console.log('Incorrect');
-  alert('Incorrect');
+  //console.log('EERRRRRR WRONGGGG');
+  alert('EERRRRRR WRONGGGG');
 }
 
 // Question 5
 let question5 = prompt('Are cats my favorite animals?', 'y/y, Yes/Yessssssss').toLowerCase();
 if (question5 === 'yes' || question5 === 'y') {
-  //console.log('You\'re Right, ' + username);
-  alert('You\'re Right!');
   playersScore++;
+  //console.log('You\'re right, ' + username /:3);
+  alert('You\'re right! /:3');
 }
 else {
-  //console.log('Incorrect, ' + username);
-  alert('Incorrect');
+  //console.log('Man, you're dumb, ' + username);
+  alert('You suck');
 }
 
 // Question 6
 let question6 = 0;
-question6 = prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`)
+question6 = +prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`)
 let answer6 = 9;
 console.log('test1');
 for (let i = 4; i > 0; i--) {
   if (question6 === answer6) {
-    alert('You\'re Right!');
     playersScore++;
+    alert('You\'re right!');
     console.log('test2');
   } else if (i === 0 && question6 != answer6) {
-    alert('I\'m sorry, you\'re all out of attempts.');
+    alert('I\'m sorry, you\'re a shitty psychic.');
   }
   else if (question6 > answer6) {
 
-    alert('Dang, Close. You\'re high.');
+    alert('Dang, close. You\'re high.');
     question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
   }
   else if (question6 < answer6) {
@@ -109,7 +111,7 @@ while (success === false || turns === totalTurns) {
   let arrayAnswers = +prompt(`Give me numbers 1-6`);
   for (let j = 0; j < possibleAnswers.length; j++) {
     if (arrayAnswers === possibleAnswers[j]) {
-      alert(`You're right! You have ${5 - turns} guesses left.`)
+      alert(`You're right!`)
       success = true;
     }
   }
