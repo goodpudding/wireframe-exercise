@@ -77,31 +77,31 @@ console.log(playersScore);
 // Question 5
 let question5 = prompt('Are cats my favorite animals?', 'y/y, Yes/Yessssssss').toLowerCase();
 if (question5 === 'yes' || question5 === 'y') {
-  //console.log('You\'re Right, ' + username);
-  alert('You\'re Right!');
   playersScore++;
+  //console.log('You\'re right, ' + username /:3);
+  alert('You\'re right! /:3');
 }
 else {
-  //console.log('Incorrect, ' + username);
-  alert('Incorrect');
+  //console.log('Man, you're dumb, ' + username);
+  alert('You suck');
 }
 
 // Question 6
 let question6 = 0;
-question6 = prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`)
+question6 = +prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`)
 let answer6 = 9;
 console.log('test1');
 for (let i = 4; i > 0; i--) {
   if (question6 === answer6) {
-    alert('You\'re Right!');
     playersScore++;
+    alert('You\'re right!');
     console.log('test2');
   } else if (i === 0 && question6 != answer6) {
-    alert('I\'m sorry, you\'re all out of attempts.');
+    alert('I\'m sorry, you\'re a shitty psychic.');
   }
   else if (question6 > answer6) {
 
-    alert('Dang, Close. You\'re high.');
+    alert('Dang, close. You\'re high.');
     question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
   }
   else if (question6 < answer6) {
@@ -132,7 +132,7 @@ while (success === false || turns === totalTurns) {
   let arrayAnswers = +prompt(`Give me numbers 1-6`);
   for (let j = 0; j < possibleAnswers.length; j++) {
     if (arrayAnswers === possibleAnswers[j]) {
-      alert(`You're right! You have ${5 - turns} guesses left.`)
+      alert(`You're right!`)
       success = true;
     }
   }
