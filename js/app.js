@@ -1,4 +1,5 @@
 'use strict';
+
 let playersScore = 0;
 
 //Welcome message
@@ -75,67 +76,91 @@ q4();
 console.log(playersScore);
 
 // Question 5
-let question5 = prompt('Are cats my favorite animals?', 'y/y, Yes/Yessssssss').toLowerCase();
-if (question5 === 'yes' || question5 === 'y') {
-  playersScore++;
-  //console.log('You\'re right, ' + username /:3);
-  alert('You\'re right! /:3');
+function q5(question5) {
+  question5 = prompt('Are cats my favorite animals?', 'y/y, Yes/Yessssssss').toLowerCase();
+  if (question5 === 'yes' || question5 === 'y') {
+    //console.log('You\'re Right, ' + username);
+    alert('You\'re Right!');
+    return playersScore++;
+  }
+  else {
+    //console.log('Incorrect, ' + username);
+    alert('Incorrect');
+  }
 }
-else {
-  //console.log('Man, you're dumb, ' + username);
-  alert('You suck');
-}
+
+q5();
+console.log(playersScore);
+
 
 // Question 6
 let question6 = 0;
-question6 = +prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`)
-let answer6 = 9;
-console.log('test1');
-for (let i = 4; i > 0; i--) {
-  if (question6 === answer6) {
-    playersScore++;
-    alert('You\'re right!');
-    console.log('test2');
-  } else if (i === 0 && question6 != answer6) {
-    alert('I\'m sorry, you\'re a shitty psychic.');
+function q6(answer6 = 9) {
+  for (let i = 4; i > 0; i--) {
+    question6 = parseInt(prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`));
+    console.log(i)
+    
+    if (question6 === answer6) {
+      alert('You\'re Right!');  
+      //console.log('test2');
+      return playersScore++;
+      
+    } 
+    
+    else if (i === 0 && question6 != answer6) {
+      alert('I\'m sorry, you\'re all out of attempts.');
+    }
+      
+    else if (question6 > answer6) {
+      alert('Dang, Close. You\'re high.');
+      
+    //   question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
+    }
+    else if (question6 < answer6) {
+      alert('Dang, Close. You\'re low.');
+    //   question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
+     }
+    else if (question6 === '') {
+      alert('That\'s not a number. We programmer nerds call that a string.');
+    //   question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
+    }
+    else if (question6 > 10 || question6 < 1) {
+      alert('No silly! Pick a number between 1-10');
+    //   question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
+    }
   }
-  else if (question6 > answer6) {
-
-    alert('Dang, close. You\'re high.');
-    question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
   }
-  else if (question6 < answer6) {
-    alert('Dang, Close. You\'re low.');
-    question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
-  }
-  else if (question6 === '') {
-    alert('That\'s not a number. We programmer nerds call that a string.');
-    question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
-  }
-  else if (question6 > 10 || question6 < 1) {
-    alert('No silly! Pick a number between 1-10');
-    question6 = prompt(`Can you guess which number?`, `You have ${i} attempts left.`);
-  }
-}
+  
+  q6();
+  console.log(playersScore);
 
 
 // Question 7
 
-let possibleAnswers = [1, 2, 3, 4, 5, 6];
-let success = false;
-let totalTurns = 6;
-let turns = 0;
-while (success === false || turns === totalTurns) {
-  if (turns != 0) {
-    alert(`incorrect, try again`);
-  }
-  let arrayAnswers = +prompt(`Give me numbers 1-6`);
-  for (let j = 0; j < possibleAnswers.length; j++) {
-    if (arrayAnswers === possibleAnswers[j]) {
-      alert(`You're right!`)
-      success = true;
+function q7 (possibleAnswers = [1, 2, 3, 4, 5, 6], totalTurns = 6) {
+
+  // success = false;
+  let turns = 0;
+  
+  while (turns < totalTurns) {
+    if (turns != 0) {
+      alert(`Try again`);
     }
+    
+    let arrayAnswers = +prompt(`Give me numbers 1-6`);
+    
+    for (let j = 0; j < possibleAnswers.length; j++) {
+      if (arrayAnswers === possibleAnswers[j]) {
+        alert(`You're right! You have ${5 - turns} guesses left.`)
+        success = true;
+        return playersScore += 1;
+      }
+    }
+    turns++;
   }
-  turns++;
-}
+  }
+  
+  q7();
+  console.log(playersScore);
+
 alert(`You scored ${playersScore} of 7 points. Not too bad, ${username}.`);
