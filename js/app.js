@@ -1,32 +1,45 @@
 'use strict';
-alert('Hello!');
-let username = prompt('What is your name?');
-alert('Hi there, ' + username + '. Lets play a little game.');
 let playersScore = 0;
 
-// Question 1
-let question1 = prompt('Did I grow up in Alaska').toLowerCase();
-if (question1 === 'yes' || question1 === 'y') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
-  playersScore + 1;
-}
-else {
-  //console.log('Incorrect');
-  alert('Incorrect');
+//Welcome message
+function getName (username) {
+  alert('Hello!');
+  let username = prompt('What is your name?');
+  alert('Hi there, ' + username + '. Lets play a little game.');
 }
 
+// Question 1
+function q1(question1) {
+  question1 = prompt('Did I grow up in Alaska').toLowerCase();
+  if (question1 === 'yes' || question1 === 'y') {
+    //console.log('You\'re Right!');
+    alert('You\'re Right!');
+    return playersScore += 1;
+  }
+  else {
+    //console.log('Incorrect');
+    alert('Incorrect');
+  }
+}
+q1();
+console.log(playersScore);
+
 // Question 2
-let question2 = prompt('Did I complete my degree', 'y/n, Yes/No').toLowerCase();
-if (question2 === 'yes' || question2 === 'y') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
-  playersScore++;
-}
-else {
-  console.log('Incorrect');
-}
-console.log('test6666');
+function q2(question2) {
+  question2 = prompt('Did I complete my degree', 'y/n, Yes/No').toLowerCase();
+  if (question2 === 'yes' || question2 === 'y') {
+    //console.log('You\'re Right!');
+    alert('You\'re Right!');
+    return playersScore++;
+  }
+  else {
+    console.log('Incorrect');
+  }
+  }
+
+q2();
+console.log(playersScore);
+
 // Question 3
 let question3 = prompt('Have I lived in more that 5 states?', 'y/n, Yes/No').toLowerCase();
 if (question3 === 'yes' || question3 === 'y') {
