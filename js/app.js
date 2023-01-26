@@ -5,8 +5,9 @@ let playersScore = 0;
 //Welcome message
 function getName (username) {
   alert('Hello!');
-  let username = prompt('What is your name?');
+  username = prompt('What is your name?');
   alert('Hi there, ' + username + '. Lets play a little game.');
+  return username;
 }
 
 // Question 1
@@ -98,7 +99,7 @@ let question6 = 0;
 function q6(answer6 = 9) {
   for (let i = 4; i > 0; i--) {
     question6 = parseInt(prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`));
-    console.log(i)
+    //console.log(i)
     
     if (question6 === answer6) {
       alert('You\'re Right!');  
@@ -152,7 +153,7 @@ function q7 (possibleAnswers = [1, 2, 3, 4, 5, 6], totalTurns = 6) {
     for (let j = 0; j < possibleAnswers.length; j++) {
       if (arrayAnswers === possibleAnswers[j]) {
         alert(`You're right! You have ${5 - turns} guesses left.`)
-        success = true;
+        // success = true;
         return playersScore += 1;
       }
     }
@@ -163,4 +164,4 @@ function q7 (possibleAnswers = [1, 2, 3, 4, 5, 6], totalTurns = 6) {
   q7();
   console.log(playersScore);
 
-alert(`You scored ${playersScore} of 7 points. Not too bad, ${username}.`);
+alert(`You scored ${playersScore} of 7 points. Not too bad!`);
