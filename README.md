@@ -20,11 +20,11 @@ Depending on the size of the project, if it is small and simple enough the refer
 
 ## Tests
 
-![Here is my lighthouse results](img/LighthouseTest.png)
+![Here is my lighthouse results](img/LighthouseTest3.png)
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+Trey Young with tons of help from Miranda Lu
 
 ## License
 
