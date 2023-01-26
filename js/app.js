@@ -9,7 +9,7 @@ function getName (username) {
   alert('Hi there, ' + username + '. Lets play a little game.');
   return username;
 }
-
+getName();
 // Question 1
 function q1(question1) {
   question1 = prompt('Did I grow up in Alaska').toLowerCase();
