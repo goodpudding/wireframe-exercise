@@ -41,28 +41,38 @@ q2();
 console.log(playersScore);
 
 // Question 3
-let question3 = prompt('Have I lived in more that 5 states?', 'y/n, Yes/No').toLowerCase();
-if (question3 === 'yes' || question3 === 'y') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
-  playersScore++;
-}
-else {
-  //console.log('Incorrect');
-  alert('Incorrect');
+
+function q3(question3) {
+  question3 = prompt('Have I lived in more than 5 states?', 'y/n, Yes/No').toLowerCase();
+  if (question3 === 'yes' || question3 === 'y') {
+    //console.log('You\'re Right!');
+    alert('You\'re Right!');
+    return playersScore++;
+  }
+  else {
+    //console.log('Incorrect');
+    alert('Incorrect');
+  }
 }
 
+q3();
+console.log(playersScore);
+
 // Question 4
-let question4 = prompt('Did I graduate in 2011?', 'y/n, Yes/No').toLowerCase();
-if (question4 === 'n' || question4 === 'no') {
-  //console.log('You\'re Right!');
-  alert('You\'re Right!');
-  playersScore++;
+function q4(question4){
+  question4 = prompt('Did I graduate in 2011?', 'y/n, Yes/No').toLowerCase();
+  if (question4 === 'n' || question4 === 'no') {
+    //console.log('You\'re Right!');
+    alert('You\'re Right!');
+    return playersScore++;
+  }
+  else {
+    //console.log('Incorrect');
+    alert('Incorrect');
+  }
 }
-else {
-  //console.log('Incorrect');
-  alert('Incorrect');
-}
+q4();
+console.log(playersScore);
 
 // Question 5
 let question5 = prompt('Are cats my favorite animals?', 'y/y, Yes/Yessssssss').toLowerCase();
