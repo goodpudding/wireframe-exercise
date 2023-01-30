@@ -1,15 +1,18 @@
 'use strict';
 let playersScore = 0;
-
+let username = '';
 
 //Welcome message
-function getName(username) {
+function getName() {
   alert('Hello!');
   username = prompt('What is your name?');
   alert('Hi there, ' + username + '. Lets play a little game.');
+  console.log(username);
   return username;
 }
+getName();
 
+console.log(username);
 
 // Question 1
 function q1(question1) {
@@ -20,9 +23,12 @@ function q1(question1) {
   }
   else {
     alert('Incorrect');
+
   }
+  console.log(playersScore);
 }
 
+console.log(username);
 
 // Question 2
 function q2(question2) {
@@ -34,6 +40,8 @@ function q2(question2) {
   else {
     console.log('Incorrect');
   }
+  console.log(playersScore);
+
 }
 
 
@@ -48,6 +56,8 @@ function q3(question3) {
   else {
     alert('Incorrect');
   }
+  console.log(playersScore);
+
 }
 
 
@@ -61,6 +71,8 @@ function q4(question4) {
   else {
     alert('Incorrect');
   }
+  console.log(playersScore);
+
 }
 
 
@@ -74,14 +86,15 @@ function q5(question5) {
   else {
     alert('Incorrect');
   }
-}
+  console.log(playersScore);
 
+}
 
 // Question 6
 let question6 = 0;
 function q6(answer6 = 9) {
   for (let i = 4; i > 0; i--) {
-    question6 = parseInt(prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get 4 attempts.`));
+    question6 = parseInt(prompt(`I'm thinking of a number between 1-10. Can you guess which number?`, `Get ${i} attempts.`));
     if (question6 === answer6) {
       alert('You\'re Right!');
       return playersScore++;
@@ -110,12 +123,12 @@ function q7(possibleAnswers = [1, 2, 3, 4, 5, 6], totalTurns = 6) {
   let turns = 0;
   while (turns < totalTurns) {
     if (turns != 0) {
-      alert(`Try again`);
+      alert(`Try again, you have ${totalTurns - turns} turns left`);
     }
     let arrayAnswers = +prompt(`Give me numbers 1-6`);
     for (let j = 0; j < possibleAnswers.length; j++) {
       if (arrayAnswers === possibleAnswers[j]) {
-        alert(`You're right! You have ${5 - turns} guesses left.`)
+        alert(`You're right! You had ${5 - turns} guesses left.`)
         return playersScore += 1;
       }
     }
@@ -126,7 +139,6 @@ function q7(possibleAnswers = [1, 2, 3, 4, 5, 6], totalTurns = 6) {
 
 // Function for Questions
 function questionGame() {
-  getName();
   q1();
   q2();
   q3();
@@ -135,5 +147,6 @@ function questionGame() {
   q6();
   q7();
 }
-// questionGame();
-// alert(`You scored ${playersScore} of 7 points. Not too bad!`);
+
+questionGame();
+alert(`Way to go ${username} You scored ${playersScore} of 7 points. Not too bad!`);
