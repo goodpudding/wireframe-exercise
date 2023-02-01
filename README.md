@@ -1,6 +1,6 @@
 # Synopsis
 
-This page is an About ME, Trey Young. Thanks for viewing.
+This page is an for my lab 8a wireframe exercise
 
 ## Code Example
 
